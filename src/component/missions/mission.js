@@ -1,5 +1,5 @@
 export default function Mission() {
-    return (
-        <h1>Welcome to Mission page</h1>
-    )
+  return (
+    <h1>Welcome to Mission page</h1>
+  );
 }

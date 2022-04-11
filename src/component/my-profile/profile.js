@@ -1,5 +1,5 @@
 export default function MyProfile() {
-    return (
-        <h1>Welcome to MyProfile page</h1>
-    )
+  return (
+    <h1>Welcome to MyProfile page</h1>
+  );
 }
