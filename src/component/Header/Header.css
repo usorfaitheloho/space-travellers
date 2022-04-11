@@ -10,6 +10,7 @@
   font-family: sans-serif;
   margin-bottom: 30px;
   font-family: "Yusei Magic", sans-serif;
+  background-image: url();
 }
 
 .left-header {
@@ -17,6 +18,8 @@
   align-items: center;
   gap: 20px;
 }
+
+
 
 a {
   text-decoration: none;
@@ -34,8 +37,4 @@ a {
   gap: 10px;
   list-style: none;
   list-style-type: none;
- 
-}
-.right-header ll{
-    color: blue;
 }
