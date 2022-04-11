@@ -2,25 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-export default function Header() {
-  return (
-    <nav>
-      <ul className="navLink">
-        <img src="./image/logo.png" alt="logo" />
-        <li className="navItem">
-          <Link to="/">
-            <span>Rockets</span>
-          </Link>
-        </li>
+const Header = () => (
+  <header className="header">
+    <div className="left-header">
+      <h1 className="logo">
+        <img src="../../image/logo.png" alt="logo" />
+      </h1>
 
-        <li className="navItem">
-          <Link to="/Mission">Mission</Link>
-        </li>
-        <span>|</span>
-        <li className="navItem">
-          <Link to="/Myprofile">MyProfile</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
+      <nav className="navigation">
+        <h2>Space Traveler's Hub</h2>
+        {/*  */}
+      </nav>
+    </div>
+    <div className="right-header">
+      <li>
+        {" "}
+        <Link to="/">Rockets</Link>
+      </li>
+      <li>
+        {" "}
+        <Link to="/mission">Mission</Link>
+      </li>
+      <span>|</span>
+      <li>
+        {" "}
+        <Link to="/profile">MyProfile</Link>
+      </li>
+    </div>
+  </header>
+);
+export default Header;

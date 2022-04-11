@@ -1,35 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat&family=Yusei+Magic&display=swap");
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 0 3%;
-    border-bottom: solid 0.5px gray;
-    font-family: "Yusei Magic", sans-serif;
-    font-size: larger;
-  }
-  
-  .navLink {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    list-style-type: none;
-  }
-  
-  .navItem a,
-  span {
-    padding-right: 10px;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .home {
-    padding: 0 3%;
-  }
-  
-  .quote {
-    margin: 15% 20%;
-  }
-  
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px rgb(221, 221, 221);
+  padding: 20px 10%;
+  font-family: sans-serif;
+  margin-bottom: 30px;
+  font-family: "Yusei Magic", sans-serif;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: #121212;
+}
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  list-style-type: none;
+ 
+}
+.right-header ll{
+    color: blue;
+}

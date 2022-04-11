@@ -10,8 +10,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
         <Routes>
-          <Header />
+         
           <Route path="/rockets" element={<Rocket />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/profile" element={<MyProfile />} />
