@@ -7,10 +7,8 @@
   align-items: center;
   border-bottom: solid 1px rgb(221, 221, 221);
   padding: 20px 10%;
-  font-family: sans-serif;
   margin-bottom: 30px;
   font-family: "Yusei Magic", sans-serif;
-  background-image: url();
 }
 
 .left-header {
@@ -18,8 +16,6 @@
   align-items: center;
   gap: 20px;
 }
-
-
 
 a {
   text-decoration: none;
@@ -31,6 +27,7 @@ a {
   font-size: 20px;
   color: #121212;
 }
+
 .right-header {
   display: flex;
   align-items: center;

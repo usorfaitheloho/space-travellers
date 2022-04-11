@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => (
   <header className="header">
@@ -9,7 +9,7 @@ const Header = () => (
         <img src="../Header/image/logo.png" alt="logo" />
       </h1>
       <nav className="navigation">
-        <h2>Space Traveler's Hub</h2>
+        <h2>Space Traveler`s Hub</h2>
       </nav>
     </div>
     <div className="right-header">
