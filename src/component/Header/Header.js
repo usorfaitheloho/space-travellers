@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.css";
 
 export default function Header() {
   return (
     <nav>
-      {/*    <img src="./image/logo.png" alt="logo" /> */}
       <ul className="navLink">
+        <img src="./image/logo.png" alt="logo" />
         <li className="navItem">
           <Link to="/">
             <span>Rockets</span>
@@ -13,11 +14,11 @@ export default function Header() {
         </li>
 
         <li className="navItem">
-          <Link to="/calculator">Mission</Link>
+          <Link to="/Mission">Mission</Link>
         </li>
         <span>|</span>
         <li className="navItem">
-          <Link to="/quote">MyProfile</Link>
+          <Link to="/Myprofile">MyProfile</Link>
         </li>
       </ul>
     </nav>
