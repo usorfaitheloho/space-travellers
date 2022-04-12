@@ -1,13 +1,17 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from './image/logo.png';
-import './Header.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import logo from "./image/logo.png";
+import "./Header.css";
 
 const Header = () => (
   <header className="header">
     <div className="left-header">
       <h1 className="logo">
-        <img src={logo} alt="logo" style={{ height: '2vh' }} />
+        <img
+          src={logo}
+          alt="logo"
+          style={{ height: "9vh", marginTop: "15px" }}
+        />
       </h1>
       <nav className="navigation">
         <h2>Space Traveler`s Hub</h2>
