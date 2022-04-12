@@ -1,0 +1,27 @@
+table, th, td {
+    border: 1px solid black;
+    padding: 15px 5px;
+    border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #1212124f;
+}
+
+td.btnDataBox {
+  text-align: center;
+
+  button {
+      border-radius: 10px;
+      padding: 10px 20px;
+      background-color: aquamarine;
+  }
+
+  button.rightBtn {
+    background-color: transparent;
+  }
+}
