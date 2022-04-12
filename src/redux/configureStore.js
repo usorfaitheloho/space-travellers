@@ -1,6 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import missionReducer from './missions/mission';
+import missionReducer, { fetchMissionSuccess } from './missions/mission';
 import profileReducer from './profiles/profile';
 import rocketReducer from './rockets/rocket';
 
@@ -11,4 +11,5 @@ const rootReducer = combineReducers({
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
+store.dispatch(fetchMissionSuccess())
 export default store;
