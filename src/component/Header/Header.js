@@ -7,7 +7,11 @@ const Header = () => (
   <header className="header">
     <div className="left-header">
       <h1 className="logo">
-        <img src={logo} alt="logo" style={{ height: '9vh' }} />
+        <img
+          src={logo}
+          alt="logo"
+          style={{ height: '9vh', marginTop: '15px', border: '1px solid red' }}
+        />
       </h1>
       <nav className="navigation">
         <h2>Space Traveler`s Hub</h2>
