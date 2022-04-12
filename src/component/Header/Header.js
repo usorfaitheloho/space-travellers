@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from './image/logo.png';
-import './Header.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import logo from "./image/logo.png";
+import "./Header.css";
 
 const Header = () => (
   <header className="header">
@@ -10,7 +10,7 @@ const Header = () => (
         <img
           src={logo}
           alt="logo"
-          style={{ height: '9vh', marginTop: '15px', border: '1px solid red' }}
+          style={{ height: "9vh", marginTop: "15px" }}
         />
       </h1>
       <nav className="navigation">
