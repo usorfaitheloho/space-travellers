@@ -1,13 +1,10 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import Rocket from './component/rockets/rocket';
 import Mission from './component/missions/mission';
 import MyProfile from './component/my-profile/profile';
-import Header from './component/navigation/header';
+import Header from './component/Header/Header';
 
 function App() {
   return (
@@ -15,7 +12,8 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/rocket" element={<Rocket />} />
+
+          <Route path="/rockets" element={<Rocket />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/profile" element={<MyProfile />} />
           <Route path="/" exact element={<Rocket />} />
