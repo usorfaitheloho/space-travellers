@@ -14,4 +14,5 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 store.dispatch(fetchMissionSuccess());
+store.dispatch(rocketReducer);
 export default store;
