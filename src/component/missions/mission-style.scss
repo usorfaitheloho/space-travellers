@@ -1,0 +1,40 @@
+table, th, td {
+    border: 1px solid black;
+    padding: 15px 5px;
+    border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  padding: 20px 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #1212124f;
+}
+
+td.btnDataBox {
+  text-align: center;
+
+  button {
+      border-radius: 10px;
+      padding: 10px 20px;
+      background-color: #201d1dab;
+      color: white
+  }
+
+  button.rightBtn {
+    background-color: transparent;
+    color: black;
+  }
+
+  button.activeStatus {
+    background-color: #1c9d9d;
+    color: white;
+  }
+
+  button.activeAction {
+    border-color: red;
+    color: red;
+  }
+}
