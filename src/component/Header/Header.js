@@ -10,11 +10,11 @@ const Header = () => (
         <img
           src={logo}
           alt="logo"
-          style={{ height: '9vh', marginTop: '15px' }}
+          style={{ height: '5vh', marginTop: '15px' }}
         />
       </h1>
       <nav className="navigation">
-        <h2>Space Traveler`s Hub</h2>
+        <span>Space Travelers&apos; Hub</span>
       </nav>
     </div>
     <div className="right-header">
@@ -23,6 +23,9 @@ const Header = () => (
       </li>
       <li>
         <NavLink to="/mission">Mission</NavLink>
+      </li>
+      <li>
+        <NavLink to="/dragons">Dragons</NavLink>
       </li>
       <span>|</span>
       <li>
