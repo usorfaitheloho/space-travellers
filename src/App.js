@@ -21,12 +21,11 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-
           <Route path="/rockets" element={<Rocket />} />
           <Route path="/mission" element={<Mission />} />
-          <Route path="/Dragons" Dragons={<Dragons />} />
-
+          <Route path="/Dragons" element={<Dragons />} />
           <Route path="/profile" element={<MyProfile />} />
+
           <Route path="/" exact element={<Rocket />} />
         </Routes>
       </div>

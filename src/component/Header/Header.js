@@ -10,7 +10,7 @@ const Header = () => (
         <img
           src={logo}
           alt="logo"
-          style={{ height: '5vh', marginTop: '15px' }}
+          style={{ height: '7vh', marginTop: '15px' }}
         />
       </h1>
       <nav className="navigation">
