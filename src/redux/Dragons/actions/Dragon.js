@@ -1,5 +1,5 @@
-import { FETCH_ALL_DRAGONS, RESERVE_DRAGON, CANCEL_RESERVE } from './actionTypes';
-import * as api from '../../API/rocketAPI'
+import { FETCH_ALL_DRAGONS, RESERVE_DRAGON, CANCEL_RESERVE } from './actionsTypes';
+import * as api from '../../API/rocketAPI';
 
 export const getDragons = () => async (dispatch) => {
   try {

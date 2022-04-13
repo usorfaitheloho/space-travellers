@@ -25,6 +25,4 @@ const getData = async (url) => {
   }
 };
 
-
-
 export const fetchDragons = () => getData(dragonsUrl);
