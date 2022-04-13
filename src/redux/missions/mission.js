@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios from 'axios';
+
 const FETCH_MISSION_SUCCESS = 'space-travel/missions/mission';
 const FETCH_MISSION_FAILURE = 'space-travel/missions/fetchFailure';
 
@@ -7,7 +8,6 @@ const initMissionState = {
   loading: false,
   error: '',
 };
-
 const fetchMission = (res) => ({
   type: FETCH_MISSION_SUCCESS,
   payload: res,
@@ -36,9 +36,9 @@ export function fetchMissionSuccess() {
   return (dispatch) => {
     console.log('miss succ called');
     axios.get('https://api.spacexdata.com/v3/missions').then(
-      res => dispatch(fetchMission(res))
+      (res) => dispatch(fetchMission(res.data)),
     ).catch(
-      err => console.log(err)
-    )
-  }
+      (err) => console.log(err),
+    );
+  };
 }
