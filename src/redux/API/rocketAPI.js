@@ -25,8 +25,6 @@ const getData = async (url) => {
   }
 };
 
-export const fetchRockets = () => getData(rocketsUrl);
 
-export const fetchMissions = () => getData(missionsUrl);
 
 export const fetchDragons = () => getData(dragonsUrl);
