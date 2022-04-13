@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { leaveDragon, reserveDragon } from '../redux/dragons/dragons';
+import { leaveDragon, reserveDragon } from '../../redux/Dragons/dragons';
 
 const Dragons = (props) => {
   const dispatch = useDispatch();
