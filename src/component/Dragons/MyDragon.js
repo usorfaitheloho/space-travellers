@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "./Dragons.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './Dragons.css';
 
 const MyDragons = () => {
   const dragons = useSelector((state) => state.dragon.dragons);
@@ -9,7 +9,7 @@ const MyDragons = () => {
   return (
     <div>
       <h3 className="joined__mission__title">
-        {dragonsReserved.length > 0 ? "My Dragons" : "No Dragons Reserved!"}
+        {dragonsReserved.length > 0 ? 'My Dragons' : 'No Dragons Reserved!'}
       </h3>
       <div className="joined__mission__container">
         {dragonsReserved.map((join) => (
