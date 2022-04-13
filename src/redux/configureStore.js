@@ -8,7 +8,7 @@ import rocketReducer from './rockets/rockets';
 const rootReducer = combineReducers({
   missionReducer,
   profileReducer,
-  rocketReducer,
+  rockets: rocketReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(logger,thunk));
