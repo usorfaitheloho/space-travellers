@@ -1,4 +1,4 @@
-export default async function FectRocketData(){
+export default async function FetchRocketData(){
     const rocketURL = 'https://api.spacexdata.com/v3/rockets';
 
 
