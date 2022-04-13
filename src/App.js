@@ -25,7 +25,10 @@ function App() {
 
           <Route path="/rockets" element={<Rocket />} />
           <Route path="/mission" element={<Mission />} />
-          <Route path="/Dragons" Dragons dragons={dragons} />
+          <Route path="/Dragons" >
+              <Dragons dragons={dragons} />
+          </Route>
+        
           <Route path="/profile" element={<MyProfile />} />
           <Route path="/" exact element={<Rocket />} />
         </Routes>

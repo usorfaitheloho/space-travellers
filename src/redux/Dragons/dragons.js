@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable camelcase */
-import getData from '../../api/spacexData';
+import getData from '../API/DragonApi';
 
 const FETCH_LOADING = 'FETCH_LOADING';
 const FETCH_SUCCESS_DRAGONS = 'FETCH_SUCCESS_DRAGONS';
