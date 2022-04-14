@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket } from '../../redux/rockets/rockets';
 
-const RocketCard = ({ id, name, image, reserved, desc }) => {
+const RocketCard = ({
+  id, name, image, reserved, desc,
+}) => {
   const dispatch = useDispatch();
 
   const handleReservation = (id) => (
@@ -26,13 +28,11 @@ const RocketCard = ({ id, name, image, reserved, desc }) => {
 };
 
 RocketCard.propTypes = {
-  rocket: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
-    reserved: PropTypes.bool.isRequired,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default RocketCard;
