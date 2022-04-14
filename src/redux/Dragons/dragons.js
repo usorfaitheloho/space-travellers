@@ -1,6 +1,4 @@
-/* eslint-disable max-len */
-/* eslint-disable camelcase */
-import getData from '../API/DragonApi';
+import getData from '../API/DragonsApi';
 
 const FETCH_LOADING = 'FETCH_LOADING';
 const FETCH_SUCCESS_DRAGONS = 'FETCH_SUCCESS_DRAGONS';
@@ -44,12 +42,12 @@ export const fetchPostsRequestDragons = () => async (dispatch) => {
       fetchPostsSuccessDragons(
         result.map((dragon) => {
           const selectedData = (({
-            id, name, description, flickr_images,
+            id, name, description, flickrImages,
           }) => ({
             id,
             name,
             description,
-            flickr_images,
+            flickrImages,
             reserved: false,
           }))(dragon);
           return selectedData;
@@ -83,13 +81,21 @@ const reducer = (state = initialState, action) => {
     case RESERVE_DRAGON:
       return {
         ...state,
-        dragons: [...state.dragons.map((dragon) => (dragon.id === action.payload ? { ...dragon, reserved: true } : dragon))],
+        dragons: [
+          ...state.dragons.map((dragon) => (dragon.id === action.payload
+            ? { ...dragon, reserved: true }
+            : dragon)),
+        ],
       };
 
     case LEAVE_DRAGON:
       return {
         ...state,
-        dragons: [...state.dragons.map((dragon) => (dragon.id === action.payload ? { ...dragon, reserved: false } : dragon))],
+        dragons: [
+          ...state.dragons.map((dragon) => (dragon.id === action.payload
+            ? { ...dragon, reserved: false }
+            : dragon)),
+        ],
       };
 
     default:
