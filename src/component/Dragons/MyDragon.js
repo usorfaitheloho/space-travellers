@@ -8,7 +8,7 @@ const DragonsCard = ({ dragon }) => {
   const dispatch = useDispatch();
 
   const handleReservation = (id) => dispatch(reserveDragon(id));
-const {image}=dragon;
+  const { image } = dragon;
   return (
     <div className="dragon">
       <img className="dragon--image" src={image} alt={dragon.name} />
@@ -32,7 +32,7 @@ const {image}=dragon;
   );
 };
 
- DragonsCard.propTypes = {
+DragonsCard.propTypes = {
   dragon: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -41,5 +41,5 @@ const {image}=dragon;
     reserved: PropTypes.bool.isRequired,
   }).isRequired,
 };
- 
+
 export default DragonsCard;

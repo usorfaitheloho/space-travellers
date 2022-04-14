@@ -1,4 +1,4 @@
-import FetchDragonsData from '../API/DragonAPI.js';
+import FetchDragonsData from '../API/DragonAPI';
 
 const GET_DRAGONS_REQUEST = 'space-travellers/dragons/GET_REQUEST';
 const GET_DRAGONS_SUCCESS = 'space-travellers/dragons/GET_SUCESS';

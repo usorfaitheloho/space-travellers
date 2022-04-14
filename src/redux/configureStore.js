@@ -5,14 +5,13 @@ import missionReducer, { fetchMissionSuccess } from './missions/mission';
 
 import profileReducer from './profiles/profile';
 import rocketReducer from './rockets/rockets';
-import dragonsReducer from './Dragons/dragons';
-import { getDragons } from './Dragons/dragons';
+import dragonsReducer, { getDragons } from './Dragons/dragons';
 
 const rootReducer = combineReducers({
   missionReducer,
   profileReducer,
   rockets: rocketReducer,
-   dragons:dragonsReducer,
+  dragons: dragonsReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
