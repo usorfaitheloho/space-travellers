@@ -1,4 +1,4 @@
-import FetchDragonsData from '../API/DragonsApi';
+import FetchDragonsData from '../API/DragonAPI.js';
 
 const GET_DRAGONS_REQUEST = 'space-travellers/dragons/GET_REQUEST';
 const GET_DRAGONS_SUCCESS = 'space-travellers/dragons/GET_SUCESS';
@@ -33,10 +33,11 @@ export function getDragons() {
         const dragoninfo = data.map((uniData) => {
           const {
             id,
-            dragon_name: name,
+            name,
             description: desc,
             flickr_images: image,
           } = uniData;
+          console.log(uniData);
           return {
             id,
             name,

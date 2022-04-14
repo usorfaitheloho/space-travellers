@@ -4,29 +4,30 @@ import DragonsCard from './MyDragon';
 import { getDragons } from '../../redux/Dragons/dragons';
 import './Dragons.css';
 
-const dragon = () => {
-  const dragons = useSelector((state) => state.dragons);
+const Dragon = () => {
+ const dragons = useSelector((state) => state.dragons.DragonsData);
   const dispatch = useDispatch();
-
+/* 
   useEffect(() => {
-    if (dragons.dragonsData.length === 0) {
+    if (dragons.length === 0) {
       dispatch(getDragons());
     }
-  }, []);
-  const newdragons = dragons.dragonsData;
-
-  const cards = newdragons.length > 0 && newdragons.map((dragon) => (
+  }, []); */
+ /*  const newdragons = dragons.DragonsData; */
+ 
+  const cards = dragons.length > 0 && dragons.map((dragon) => (
     <DragonsCard
       key={dragon.id}
       dragon={dragon}
     />
-  ));
+  )); 
 
   return (
     <div className="dragon-container">
-      {cards}
+       {cards} 
+   
     </div>
   );
 };
 
-export default dragon;
+export default Dragon;
