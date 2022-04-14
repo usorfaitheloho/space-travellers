@@ -1,8 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './profile.css';
 
-const MyProfile = () => (
-  <div className="profile">
+const MyProfile = () => {
+
+  const myRockets = useSelector((state) => state.rockets);
+  const myReserveRockets = myRockets.filter((rocket) => rocket.reserved = true);
+
+  return(
+    <div className="profile">
     <section className="my-missions-sec">
       <h3 className="my-heading"> My Missions</h3>
       <div className="my-missions">
@@ -21,5 +27,6 @@ const MyProfile = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 export default MyProfile;
