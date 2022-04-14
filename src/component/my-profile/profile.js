@@ -9,10 +9,11 @@ const MyProfile = () => {
 
   const handleReservations = () => {
     if (myReserveRockets.length) {
-      return myReserveRockets.map((rocket) => {
+      return myReserveRockets.map((rocket) => (
         <p key={rocket.id} className="my-rocket">{rocket.name}</p> 
-      })
+      ));
     }
+    return <h2>No Reserved Rockets</h2>;
   }
 
   return(
