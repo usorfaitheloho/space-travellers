@@ -6,7 +6,7 @@
 }
 
 .Box {
- margin:5px 5%;
+  margin: 5px 5%;
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +14,6 @@
 .title {
   font-size: 1.4rem;
   font-family: "Poppins", sans-serif;
-  
 }
 
 .Mission-ProfileTable {
