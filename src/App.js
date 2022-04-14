@@ -10,12 +10,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-
         <Header />
         <Routes>
           <Route path="/Mission" element={<Mission />} />
           <Route path="/MyProfile" element={<MyProfile />} />
-
           <Route path="/Dragons" element={<Dragons />} />
           <Route path="/" element={<Rocket />} />
         </Routes>
