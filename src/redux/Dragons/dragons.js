@@ -1,13 +1,13 @@
-import FetchDragonsData from "../API/DragonsApi";
+import FetchDragonsData from '../API/DragonsApi';
 
-const GET_DRAGONS_REQUEST = "space-travellers/dragons/GET_REQUEST";
-const GET_DRAGONS_SUCCESS = "space-travellers/dragons/GET_SUCESS";
-const GET_DRAGONS_FAIL = "space-travellers/dragons/GET_FAIL";
-const  RESERVE_DRAGON= "space-travellers/dragons/RESERVE_DRAGON";
+const GET_DRAGONS_REQUEST = 'space-travellers/dragons/GET_REQUEST';
+const GET_DRAGONS_SUCCESS = 'space-travellers/dragons/GET_SUCESS';
+const GET_DRAGONS_FAIL = 'space-travellers/dragons/GET_FAIL';
+const RESERVE_DRAGON = 'space-travellers/dragons/RESERVE_DRAGON';
 
 const initialState = {
   DragonsData: [],
-  error: "",
+  error: '',
   load: false,
 };
 
@@ -62,11 +62,11 @@ export default function dragonsReducer(state = initialState, action) {
   switch (action.type) {
     case GET_DRAGONS_REQUEST:
       return { ...state, load: true };
-    case  GET_DRAGONS_SUCCESS:
+    case GET_DRAGONS_SUCCESS:
       return {
         ...state,
         DragonsData: action.payload,
-        error: "",
+        error: '',
       };
     case GET_DRAGONS_FAIL:
       return {
@@ -89,4 +89,6 @@ export default function dragonsReducer(state = initialState, action) {
   }
 }
 
-export { getDragonsFail, getDragonSuccess, getDragonRequest, reserveDragon };
+export {
+  getDragonsFail, getDragonSuccess, getDragonRequest, reserveDragon,
+};

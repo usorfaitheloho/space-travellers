@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/Mission" element={<Mission />} />
           <Route path="/MyProfile" element={<MyProfile />} />
-          {/* please fix the below route */}
+
           <Route path="/Dragons" element={<Dragons />} />
           <Route path="/" element={<Rocket />} />
         </Routes>

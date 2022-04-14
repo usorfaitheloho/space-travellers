@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveDragon } from '../../redux/Dragons/dragons';
 
-const DragonsCard = ({ rocket }) => {
+const DragonsCard = ({ dragon }) => {
   const dispatch = useDispatch();
 
   const handleReservation = (id) => (
@@ -11,22 +11,22 @@ const DragonsCard = ({ rocket }) => {
   );
 
   return (
-    <div className="rocket">
-      <img className="rocket--image" src={rocket.image} alt={rocket.name} />
-      <div className="rocket--desc">
-        <h2 className="rocket--desc__title">{rocket.name}</h2>
-        <p className="rocket--desc__info">
-          {rocket.reserved && <small className="reserved-badge">reserved</small>}
-          {rocket.desc}
+    <div className="dragon">
+      <img className="dragon--image" src={dragon.image} alt={dragon.name} />
+      <div className="dragon--desc">
+        <h2 className="dragon--desc__title">{dragon.name}</h2>
+        <p className="dragon--desc__info">
+          {dragon.reserved && <small className="reserved-badge">reserved</small>}
+          {dragon.desc}
         </p>
-        <button type="button" className="rocket--desc__btn" onClick={() => handleReservation(rocket.id)}>{rocket.reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
+        <button type="button" className="dragon--desc__btn" onClick={() => handleReservation(dragon.id)}>{dragon.reserved ? 'Cancel Reservation' : 'reserved dragon' }</button>
       </div>
     </div>
   );
 };
 
 DragonsCard.propTypes = {
-  rocket: PropTypes.shape({
+  dragon: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
