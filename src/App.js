@@ -7,7 +7,7 @@ import Rocket from './component/rockets/rocket';
 import Mission from './component/missions/mission';
 import MyProfile from './component/my-profile/profile';
 
-/* import Dragons from './component/Dragons/Dragons'; */
+import Dragons from './component/Dragons/Dragons';
 import Header from './component/Header/Header';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchPostsRequestDragons());
   }, []);
-
+  const dragons = useSelector((state) => state.dragon.dragons);
   return (
     <Router>
       <div className="App">
@@ -24,6 +24,10 @@ function App() {
         <Routes>
           <Route path="/Mission" element={<Mission />} />
           <Route path="/MyProfile" element={<MyProfile />} />
+          {/* please fix the below route */}
+          <Route path='/Dragons'>
+            <Dragons dragon={dragons} />
+          </Route>
           <Route path="/" element={<Rocket />} />
         </Routes>
 
