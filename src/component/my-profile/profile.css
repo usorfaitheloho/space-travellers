@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 .result {
@@ -27,4 +28,32 @@
   font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-missions-sec,
+.my-rockets-sec {
+  width: 100%;
+  margin: 60px;
+}
+
+.my-headings {
+  margin-bottom: 20px;
+}
+
+.my-missions,
+.my-rockets {
+  border: 1px solid rgba(62, 62, 62, 0.1);
+  border-radius: 5px;
+}
+
+.my-mission,
+.my-rocket {
+  border: 1px solid rgba(62, 62, 62, 0.1);
+  padding: 20px;
 }
