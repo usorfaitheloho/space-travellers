@@ -1,106 +1,92 @@
-import getData from '../API/DragonsApi';
+import FetchDragonsData from "../API/DragonsApi";
 
-const FETCH_LOADING = 'FETCH_LOADING';
-const FETCH_SUCCESS_DRAGONS = 'FETCH_SUCCESS_DRAGONS';
-const FETCH_ERROR = 'FETCH_ERROR';
-const RESERVE_DRAGON = 'RESERVE_DRAGON';
-const LEAVE_DRAGON = 'LEAVE_DRAGON';
+const GET_DRAGONS_REQUEST = "space-travellers/dragons/GET_REQUEST";
+const GET_DRAGONS_SUCCESS = "space-travellers/dragons/GET_SUCESS";
+const GET_DRAGONS_FAIL = "space-travellers/dragons/GET_FAIL";
+const  RESERVE_DRAGON= "space-travellers/dragons/RESERVE_DRAGON";
 
 const initialState = {
-  loading: true,
-  dragons: [],
-  userDragons: [],
+  DragonsData: [],
+  error: "",
+  load: false,
 };
 
-export const fetchPostsLoading = () => ({
-  type: FETCH_LOADING,
+const getDragonRequest = () => ({
+  type: GET_DRAGONS_REQUEST,
 });
 
-export const fetchPostsSuccessDragons = (payload) => ({
-  type: FETCH_SUCCESS_DRAGONS,
-  payload,
+const getDragonSuccess = (DragonsData) => ({
+  type: GET_DRAGONS_SUCCESS,
+  payload: DragonsData,
 });
 
-export const fetchPostsError = () => ({
-  type: FETCH_ERROR,
+const getDragonsFail = (error) => ({
+  type: GET_DRAGONS_FAIL,
+  payload: error,
 });
 
-export const reserveDragon = (payload) => ({
-  type: RESERVE_DRAGON,
-  payload,
-});
-
-export const leaveDragon = (payload) => ({
-  type: LEAVE_DRAGON,
-  payload,
-});
-
-export const fetchPostsRequestDragons = () => async (dispatch) => {
-  dispatch(fetchPostsLoading());
-  getData('dragons').then((result) => {
-    dispatch(
-      fetchPostsSuccessDragons(
-        result.map((dragon) => {
-          const selectedData = (({
-            id, name, description, flickrImages,
-          }) => ({
+export function getDragons() {
+  return (dispatch) => {
+    dispatch(getDragonRequest());
+    FetchDragonsData()
+      .then((data) => {
+        const dragoninfo = data.map((uniData) => {
+          const {
+            id,
+            dragon_name: name,
+            description: desc,
+            flickr_images: image,
+          } = uniData;
+          return {
             id,
             name,
-            description,
-            flickrImages,
+            desc,
+            image,
             reserved: false,
-          }))(dragon);
-          return selectedData;
-        }),
-      ),
-    );
-  });
-};
+          };
+        });
+        dispatch(getDragonSuccess(dragoninfo));
+      })
+      .catch((error) => {
+        dispatch(getDragonsFail(error.message));
+      });
+  };
+}
 
-const reducer = (state = initialState, action) => {
+const reserveDragon = (id) => ({
+  type: RESERVE_DRAGON,
+  payload: id,
+});
+
+export default function dragonsReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_LOADING:
+    case GET_DRAGONS_REQUEST:
+      return { ...state, load: true };
+    case  GET_DRAGONS_SUCCESS:
       return {
-        dragons: [...state.dragons],
-        loading: true,
+        ...state,
+        DragonsData: action.payload,
+        error: "",
       };
-
-    case FETCH_SUCCESS_DRAGONS:
+    case GET_DRAGONS_FAIL:
       return {
-        loading: false,
-        dragons: action.payload,
-      };
-
-    case FETCH_ERROR:
-      return {
-        loading: false,
-        dragons: [],
+        ...state,
+        load: false,
         error: action.payload,
       };
-
     case RESERVE_DRAGON:
       return {
         ...state,
-        dragons: [
-          ...state.dragons.map((dragon) => (dragon.id === action.payload
-            ? { ...dragon, reserved: true }
-            : dragon)),
-        ],
+        DragonsData: state.DragonsData.map((dragon) => {
+          if (dragon.id === action.payload) {
+            return { ...dragon, reserved: !dragon.reserved };
+          }
+          return dragon;
+        }),
       };
-
-    case LEAVE_DRAGON:
-      return {
-        ...state,
-        dragons: [
-          ...state.dragons.map((dragon) => (dragon.id === action.payload
-            ? { ...dragon, reserved: false }
-            : dragon)),
-        ],
-      };
-
     default:
       return state;
   }
-};
+}
 
-export default reducer;
+export { getDragonsFail, getDragonSuccess, getDragonRequest, reserveDragon };

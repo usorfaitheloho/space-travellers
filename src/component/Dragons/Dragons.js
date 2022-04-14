@@ -1,44 +1,32 @@
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { leaveDragon, reserveDragon } from '../../redux/Dragons/dragons';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import DragonsCard from './MyDragon';
+import { getDragons } from '../../redux/Dragons/dragons';
+import './rocket.css';
 
-const Dragons = (props) => {
+const Rocket = () => {
+  const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
-  const { dragons } = props;
+
+  useEffect(() => {
+    if (rockets.rocketsData.length === 0) {
+      dispatch(getDragons());
+    }
+  }, []);
+  const newRockets = rockets.rocketsData;
+
+  const cards = newRockets.length > 0 && newRockets.map((rocket) => (
+    <DragonsCard
+      key={rocket.id}
+      rocket={rocket}
+    />
+  ));
 
   return (
-    <div className="container d-flex flex-column mx-5 my-2">
-      {dragons.map((dragon) => (
-        <div key={dragon.id} className="row d-flex my-2">
-          <img className="col-md-3" src={dragon.flickr_images[0]} alt={dragon.name} />
-          <div className="col-md-9">
-            <h5>{dragon.name}</h5>
-            <p className="">
-              {dragon.reserved ? <p className="active d-inline">Reserved</p> : <div />}
-              {dragon.description}
-            </p>
-            {dragon.reserved ? (
-              <button type="button" className="btn btn-outline-dark" onClick={() => dispatch(leaveDragon(dragon.id))}>
-                Cancel Reservation
-              </button>
-            ) : (
-              <button type="button" className="btn btn-primary" onClick={() => dispatch(reserveDragon(dragon.id))}>
-                Reserve Dragon
-              </button>
-            )}
-          </div>
-        </div>
-      ))}
+    <div className="rocket-container">
+      {cards}
     </div>
   );
 };
 
-Dragons.defaultProps = {
-  dragons: [],
-};
-
-Dragons.propTypes = {
-  dragons: PropTypes.instanceOf(Array),
-};
-
-export default Dragons;
+export default Rocket;

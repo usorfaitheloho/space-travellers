@@ -1,23 +1,38 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import './Dragons.css';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveDragon } from '../../redux/Dragons/dragons';
 
-const MyDragons = () => {
-  const dragons = useSelector((state) => state.dragon.dragons);
-  const dragonsReserved = dragons.filter((dragon) => dragon.reserved === true);
+const DragonsCard = ({ rocket }) => {
+  const dispatch = useDispatch();
+
+  const handleReservation = (id) => (
+    dispatch(reserveDragon(id))
+  );
 
   return (
-    <div>
-      <h3 className="joined__mission__title">{dragonsReserved.length > 0 ? 'My Dragons' : 'No Dragons Reserved!'}</h3>
-      <div className="joined__mission__container">
-        {dragonsReserved.map((join) => (
-          <div key={join.id}>
-            <div>{join.reserved === true ? <p className="joined__mission__item border">{join.name}</p> : <p>{null}</p>}</div>
-          </div>
-        ))}
+    <div className="rocket">
+      <img className="rocket--image" src={rocket.image} alt={rocket.name} />
+      <div className="rocket--desc">
+        <h2 className="rocket--desc__title">{rocket.name}</h2>
+        <p className="rocket--desc__info">
+          {rocket.reserved && <small className="reserved-badge">reserved</small>}
+          {rocket.desc}
+        </p>
+        <button type="button" className="rocket--desc__btn" onClick={() => handleReservation(rocket.id)}>{rocket.reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
       </div>
     </div>
   );
 };
 
-export default MyDragons;
+DragonsCard.propTypes = {
+  rocket: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    reserved: PropTypes.bool.isRequired,
+  }).isRequired,
+};
+
+export default DragonsCard;
