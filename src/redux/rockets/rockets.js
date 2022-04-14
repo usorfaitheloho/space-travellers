@@ -64,7 +64,7 @@ export default function rocketReducer(state = initialState, action) {
       return { ...state, load: true };
     case GET_ROCKETS_SUCCESS:
       return {
-        load: false,
+        ...state,
         rocketsData: action.payload,
         error: '',
       };
