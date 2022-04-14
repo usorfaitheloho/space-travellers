@@ -1,17 +1,34 @@
 import axios from 'axios';
 
-const FETCH_MISSION_SUCCESS = 'space-travel/missions/mission';
-const FETCH_MISSION_FAILURE = 'space-travel/missions/fetchFailure';
+const FETCH_MISSION_SUCCESS = 'space-travel/missions/FETCH_SUCCESS';
+const FETCH_MISSION_FAILURE = 'space-travel/missions/FETCH_FAILURE';
+const FETCH_MISSION_REQUEST = 'space-travel/missions/START_FETCH';
+const UPDATE_MEMEBERSHIP = 'space-travel/missions/UPDATE_MEMEBERSHIP';
 
 const initMissionState = {
   missions: [],
   loading: false,
   error: '',
 };
-const fetchMission = (res) => ({
+const loadMissionSuccess = (res) => ({
   type: FETCH_MISSION_SUCCESS,
   payload: res,
 });
+
+const loadMissionRequest = () => ({
+  type: FETCH_MISSION_REQUEST,
+})
+
+const loadMissionFailure = (err) => ({
+  type: FETCH_MISSION_FAILURE,
+  payload: err
+})
+
+export function updateMembership (mission_id) {
+  return {
+  type: UPDATE_MEMEBERSHIP,
+  payload: mission_id
+}}
 
 export default function reducer(state = initMissionState, action) {
   switch (action.type) {
@@ -22,8 +39,25 @@ export default function reducer(state = initMissionState, action) {
       };
     case FETCH_MISSION_FAILURE:
       return {
-        error: 'Unable to load',
+        error: action.payload,
       };
+    case FETCH_MISSION_REQUEST:
+      return {
+        loading: true,
+        error: ''
+      }
+    case UPDATE_MEMEBERSHIP:
+      {
+        const newState = state.missions.map( item => {
+          if(item.mission_id !== action.payload)
+            return item;
+          return {...item, reserved: true};
+        });
+        console.log(newState);
+        return {
+          missions: newState
+        }
+      }
     default:
       return {
         loading: false,
@@ -34,11 +68,13 @@ export default function reducer(state = initMissionState, action) {
 
 export function fetchMissionSuccess() {
   return (dispatch) => {
-    console.log('miss succ called');
+    dispatch(loadMissionRequest())
     axios.get('https://api.spacexdata.com/v3/missions').then(
-      (res) => dispatch(fetchMission(res.data)),
+      (res) => dispatch(loadMissionSuccess(res.data)),
     ).catch(
-      (err) => console.log(err),
+      (err) => dispatch(loadMissionFailure(err)),
     );
   };
 }
+
+

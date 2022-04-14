@@ -1,10 +1,10 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import MissionItem from './mission-card';
 import './mission-style.scss';
 
 export default function Mission() {
   const missionList = useSelector((state) => state.missionReducer.missions);
+
   return (
     <table>
       <thead>
