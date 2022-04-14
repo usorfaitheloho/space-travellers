@@ -5,7 +5,7 @@ import { updateMembership } from '../../redux/missions/mission';
 export default function missionItem({ itemDetail }) {
   const dispatch = useDispatch();
   const len = itemDetail.payload_ids.length;
-  
+
   return (
     <tr>
       <td>
