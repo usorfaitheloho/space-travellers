@@ -9,9 +9,10 @@ const Rocket = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (rockets.rocketsData.length === 0) {
+      dispatch(getRockets());
+    }
   }, []);
-
   const newRockets = rockets.rocketsData;
 
   const cards = newRockets.length > 0 && newRockets.map((rocket) => (
