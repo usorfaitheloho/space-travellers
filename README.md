@@ -6,7 +6,8 @@
 
 ## Live Demo
 
-- [Live link](https://calculator-math-magician.netlify.app/).
+- [Live link](https://sbf-spacetravellers.herokuapp.com/)
+).
 
 ### Features implemented so far are:
 
