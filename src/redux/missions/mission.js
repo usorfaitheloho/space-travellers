@@ -50,10 +50,10 @@ export default function reducer(state = initMissionState, action) {
     case UPDATE_MEMEBERSHIP:
     {
       const newState = state.missions.map((item) => {
-        if (item.missionId !== action.payload) { return item; }
-        return { ...item, reserved: true };
+        if (item.mission_id !== action.payload) { return item; }
+        const val = typeof item.reserved === 'boolean' ? !item.reserved : true;
+        return { ...item, reserved: val };
       });
-      console.log(newState);
       return {
         missions: newState,
       };

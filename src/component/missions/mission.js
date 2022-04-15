@@ -1,10 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissionSuccess } from '../../redux/missions/mission';
 import MissionItem from './mission-card';
 import './mission-style.scss';
 
 export default function Mission() {
-  const missionList = useSelector((state) => state.missionReducer.missions);
-
+  const initState = useSelector((state) => state.missionReducer);
+  const { missions: missionList, loading } = initState;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (missionList.length === 0 && !loading) {
+      dispatch(fetchMissionSuccess());
+    }
+  }, []);
   return (
     <table>
       <thead>
@@ -17,7 +25,8 @@ export default function Mission() {
       </thead>
       <tbody>
         {
-          missionList.map((item) => (
+          missionList
+          && missionList.map((item) => (
             <MissionItem
               key={item.mission_id}
               itemDetail={item}

@@ -1,7 +1,8 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import missionReducer, { fetchMissionSuccess } from './missions/mission';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import missionReducer from './missions/mission';
 
 import profileReducer from './profiles/profile';
 import rocketReducer from './rockets/rockets';
@@ -14,8 +15,14 @@ const rootReducer = combineReducers({
   dragons: dragonsReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
-store.dispatch(fetchMissionSuccess());
+// store.dispatch(fetchMissionSuccess());
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(logger, thunk),
+  ),
+
+);
 store.dispatch(rocketReducer);
 store.dispatch(getDragons());
 export default store;
