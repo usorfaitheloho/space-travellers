@@ -17,18 +17,19 @@ const loadMissionSuccess = (res) => ({
 
 const loadMissionRequest = () => ({
   type: FETCH_MISSION_REQUEST,
-})
+});
 
 const loadMissionFailure = (err) => ({
   type: FETCH_MISSION_FAILURE,
-  payload: err
-})
+  payload: err,
+});
 
-export function updateMembership (mission_id) {
+export function updateMembership(mission_id) {
   return {
-  type: UPDATE_MEMEBERSHIP,
-  payload: mission_id
-}}
+    type: UPDATE_MEMEBERSHIP,
+    payload: mission_id,
+  };
+}
 
 export default function reducer(state = initMissionState, action) {
   switch (action.type) {
@@ -44,20 +45,19 @@ export default function reducer(state = initMissionState, action) {
     case FETCH_MISSION_REQUEST:
       return {
         loading: true,
-        error: ''
-      }
+        error: '',
+      };
     case UPDATE_MEMEBERSHIP:
-      {
-        const newState = state.missions.map( item => {
-          if(item.mission_id !== action.payload)
-            return item;
-          return {...item, reserved: true};
-        });
-        console.log(newState);
-        return {
-          missions: newState
-        }
-      }
+    {
+      const newState = state.missions.map((item) => {
+        if (item.mission_id !== action.payload) { return item; }
+        const val = typeof item.reserved === 'boolean' ? !item.reserved : true;
+        return { ...item, reserved: val };
+      });
+      return {
+        missions: newState,
+      };
+    }
     default:
       return {
         loading: false,
@@ -68,7 +68,7 @@ export default function reducer(state = initMissionState, action) {
 
 export function fetchMissionSuccess() {
   return (dispatch) => {
-    dispatch(loadMissionRequest())
+    dispatch(loadMissionRequest());
     axios.get('https://api.spacexdata.com/v3/missions').then(
       (res) => dispatch(loadMissionSuccess(res.data)),
     ).catch(
@@ -76,5 +76,3 @@ export function fetchMissionSuccess() {
     );
   };
 }
-
-
