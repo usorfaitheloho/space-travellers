@@ -40,12 +40,10 @@ const MyProfile = () => {
         <h3 className="my-heading"> My Missions</h3>
         <div className="my-missions">
           {
-            myReservedMissions.map((item) => {
-              console.log(item);
-              return (
-                <p className="my-mission">{item.mission_name}</p>
-              );
-            })
+            myReservedMissions.length === 0
+              ? <h2>No Reserved Missions</h2> : myReservedMissions.map((item) => (
+                <p className="my-mission" key={item.mission_id}>{item.mission_name}</p>
+              ))
           }
         </div>
       </section>

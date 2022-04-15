@@ -6,13 +6,13 @@ import './mission-style.scss';
 
 export default function Mission() {
   const initState = useSelector((state) => state.missionReducer);
-  const { missions : missionList, loading } = initState;
+  const { missions: missionList, loading } = initState;
   const dispatch = useDispatch();
   useEffect(() => {
-    if (missionList.length === 0 && !loading  ) {
+    if (missionList.length === 0 && !loading) {
       dispatch(fetchMissionSuccess());
     }
-  },[]);
+  }, []);
   return (
     <table>
       <thead>
