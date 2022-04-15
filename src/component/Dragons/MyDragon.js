@@ -36,7 +36,7 @@ DragonsCard.propTypes = {
   dragon: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    image: PropTypes.array.isRequired,
+    image: PropTypes.instanceOf(Array).isRequired,
     desc: PropTypes.string.isRequired,
     reserved: PropTypes.bool.isRequired,
   }).isRequired,
