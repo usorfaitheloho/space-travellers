@@ -24,10 +24,10 @@ const loadMissionFailure = (err) => ({
   payload: err,
 });
 
-export function updateMembership(mission_id) {
+export function updateMembership(missionId) {
   return {
     type: UPDATE_MEMEBERSHIP,
-    payload: mission_id,
+    payload: missionId,
   };
 }
 
@@ -50,7 +50,7 @@ export default function reducer(state = initMissionState, action) {
     case UPDATE_MEMEBERSHIP:
     {
       const newState = state.missions.map((item) => {
-        if (item.mission_id !== action.payload) { return item; }
+        if (item.missionId !== action.payload) { return item; }
         return { ...item, reserved: true };
       });
       console.log(newState);

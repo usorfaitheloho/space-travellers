@@ -1,11 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "./profile.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './profile.css';
 
 const MyProfile = () => {
   const myRockets = useSelector((state) => state.rockets);
   const myReserveRockets = myRockets.rocketsData.filter(
-    (rocket) => rocket.reserved
+    (rocket) => rocket.reserved,
   );
 
   const handleReservations = () => {
@@ -19,18 +19,17 @@ const MyProfile = () => {
     return <h2>No Reserved Rockets</h2>;
   };
 
-
   const myDragons = useSelector((state) => state.dragons);
   const myReserveDragons = myDragons.DragonsData.filter(
-    (dragon) => dragon.reserved
+    (dragon) => dragon.reserved,
   );
   const handleDragonReservation = () => {
     if (myReserveDragons.length) {
-      return myReserveDragons.map((dragon) => {
+      return myReserveDragons.map((dragon) => (
         <p key={dragon.id} className="my-dragon">
           {dragon.name}
-        </p>;
-      });
+        </p>
+      ));
     }
     return <h2> No reserved Dragons</h2>;
   };

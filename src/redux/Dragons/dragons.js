@@ -37,7 +37,7 @@ export function getDragons() {
             description: desc,
             flickr_images: image,
           } = uniData;
-        
+
           return {
             id,
             name,
