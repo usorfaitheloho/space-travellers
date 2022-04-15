@@ -19,6 +19,7 @@
 
 a {
   text-decoration: none;
+  color: rgb(25, 107, 214);
 }
 
 .navigation {
@@ -31,7 +32,7 @@ a {
 .right-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   list-style: none;
   list-style-type: none;
 }
