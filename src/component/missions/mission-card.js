@@ -12,7 +12,7 @@ export default function missionItem({ itemDetail }) {
           {itemDetail.mission_name}
         </strong>
       </td>
-      <td>{itemDetail.description}</td>
+      <td style={{ width: '20%' }}>{itemDetail.description}</td>
       <td className="btnDataBox">
         <button type="button" className={itemDetail.reserved ? 'activeStatus' : ''}>{itemDetail.reserved ? 'Active member' : 'Not a member'}</button>
       </td>
