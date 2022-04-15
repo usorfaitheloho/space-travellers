@@ -1,0 +1,54 @@
+@import url("https://fonts.cdnfonts.com/css/cocogoose");
+@import url("https://fonts.cdnfonts.com/css/Lato");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+:root {
+  --color: rgb(20 11 11 / 69%);
+  --padding: 20px 30px;
+  --congo-font: 'cocogoose', sans-serif;
+  --lato-font: 'Lato', sans-serif;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: var(--lato-font);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-content: flex-start;
+  overflow-x: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+}

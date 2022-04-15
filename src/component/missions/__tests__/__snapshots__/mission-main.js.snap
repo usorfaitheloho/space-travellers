@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission renders correctly 1`] = `
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th
+          aria-label="Mission col"
+          style={
+            Object {
+              "width": "15%",
+            }
+          }
+        >
+          Mission
+        </th>
+        <th
+          aria-label="desc column"
+        >
+          Description
+        </th>
+        <th
+          aria-label="status mtd"
+          style={
+            Object {
+              "width": "15%",
+            }
+          }
+        >
+          Status
+        </th>
+        <th
+          aria-label="action btn"
+          style={
+            Object {
+              "width": "15%",
+            }
+          }
+        />
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
