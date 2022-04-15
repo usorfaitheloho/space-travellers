@@ -14,6 +14,7 @@ export default function Mission() {
     }
   }, []);
   return (
+    <div>
     <table>
       <thead>
         <tr>
@@ -35,5 +36,6 @@ export default function Mission() {
         }
       </tbody>
     </table>
+    </div>
   );
 }
