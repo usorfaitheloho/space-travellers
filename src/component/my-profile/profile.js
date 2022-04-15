@@ -15,6 +15,7 @@ const MyProfile = () => {
     return <h2>No Reserved Rockets</h2>;
   };
 
+
   return (
     <div className="profile">
       <section className="my-missions-sec">
@@ -32,6 +33,12 @@ const MyProfile = () => {
           {
           handleReservations()
           }
+        </div>
+      </section>
+      <section className='my-dragons-sec'>
+        <h3 className='my-heading'>My Dragons</h3>
+        <div className='my-dragons'>
+          {/* handle */}
         </div>
       </section>
     </div>
