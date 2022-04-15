@@ -5,6 +5,8 @@ import './profile.css';
 const MyProfile = () => {
   const myRockets = useSelector((state) => state.rockets);
   const myReserveRockets = myRockets.rocketsData.filter((rocket) => rocket.reserved);
+  const myMissions = useSelector((state) => state.missionReducer.missions);
+  const myReservedMissions = myMissions.filter((item) => item.reserved === true);
 
   const handleReservations = () => {
     if (myReserveRockets.length) {
@@ -20,10 +22,14 @@ const MyProfile = () => {
       <section className="my-missions-sec">
         <h3 className="my-heading"> My Missions</h3>
         <div className="my-missions">
-          <p className="my-mission">Telstar</p>
-          <p className="my-mission">SES</p>
-          <p className="my-mission">AsiaSat</p>
-          <p className="my-mission">So50</p>
+          {
+            myReservedMissions.map((item) => {
+              console.log(item);
+              return (
+                <p className="my-mission">{item.mission_name}</p>
+              );
+            })
+          }
         </div>
       </section>
       <section className="my-rockets-sec">
