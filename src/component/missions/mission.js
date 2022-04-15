@@ -15,17 +15,17 @@ export default function Mission() {
   }, []);
   return (
     <div>
-    <table>
-      <thead>
-        <tr>
-          <th style={{ width: '15%' }} aria-label="Mission col">Mission</th>
-          <th aria-label="desc column">Description</th>
-          <th aria-label="status mtd" style={{ width: '15%' }}>Status</th>
-          <th aria-label="action btn" style={{ width: '15%' }} />
-        </tr>
-      </thead>
-      <tbody>
-        {
+      <table>
+        <thead>
+          <tr>
+            <th style={{ width: '15%' }} aria-label="Mission col">Mission</th>
+            <th aria-label="desc column">Description</th>
+            <th aria-label="status mtd" style={{ width: '15%' }}>Status</th>
+            <th aria-label="action btn" style={{ width: '15%' }} />
+          </tr>
+        </thead>
+        <tbody>
+          {
           missionList
           && missionList.map((item) => (
             <MissionItem
@@ -34,8 +34,8 @@ export default function Mission() {
             />
           ))
         }
-      </tbody>
-    </table>
+        </tbody>
+      </table>
     </div>
   );
 }
