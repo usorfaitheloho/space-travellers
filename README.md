@@ -1,7 +1,7 @@
 # Space-travellers
 
 
-"Space-travellers " this is a four-page web app built with React.js and redux. The reckets page show about rockets info, the mission  page shows about mission, dragons page shows about dragon and profile page shows reserved task from three pages   
+"Space-travellers " this is a four-page web app built with React.js and redux. The rockets page show about rockets info, the mission  page shows about mission, dragons page shows about dragon and profile page shows reserved task from three pages   
 
 
 ## Live Demo
@@ -34,7 +34,7 @@ The basic requirements for building the executable are:
 #### Cloning the project
 
 ```
-git clone  git@github.com:samiullahbahadur/Math-magicians.git <Your-Build-Directory>
+git clone  https://github.com/usorfaitheloho/space-travellers.git <Your-Build-Directory>
 ```
 
 ## Getting packages and dependencies
