@@ -19,14 +19,14 @@ const MyProfile = () => {
     return <h2>No Reserved Rockets</h2>;
   };
 
-  
+
   const myDragons = useSelector((state) => state.dragons);
   const myReserveDragons = myDragons.DragonsData.filter(
     (dragon) => dragon.reserved
   );
   const handleDragonReservation = () => {
     if (myReserveDragons.length) {
-      return myReserveDragons.mag((dragon) => {
+      return myReserveDragons.map((dragon) => {
         <p key={dragon.id} className="my-dragon">
           {dragon.name}
         </p>;
