@@ -6,9 +6,11 @@ td {
   border-collapse: collapse;
 }
 
-table {
-  width: 100%;
+div {
   padding: 20px 30px;
+  table {
+    width: 100%;
+  }
 }
 
 tr:nth-child(even) {
