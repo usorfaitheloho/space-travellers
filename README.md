@@ -1,6 +1,8 @@
 # Space-travellers
 
-
+![](./public/images/screenshot1.PNG)
+![](./public/images/screenshot2.PNG)
+![](./public/images/screenshot3.PNG)
 "Space-travellers " this is a four-page web app built with React.js and redux. The rockets page show about rockets info, the mission  page shows about mission, dragons page shows about dragon and profile page shows reserved task from three pages   
 
 
