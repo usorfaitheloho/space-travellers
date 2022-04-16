@@ -9,7 +9,6 @@
 ## Live Demo
 
 - [Live link](https://sbf-spacetravellers.herokuapp.com/)
-).
 
 ### Features implemented so far are:
 
